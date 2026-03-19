@@ -1,0 +1,31 @@
+[
+  {
+    "id": 1,
+    "content": "Hello Team",
+    "userId": 1,
+    "userEmail": "muthu@gmail.com",
+    "likes": [
+      1,
+      2
+    ]
+  },
+  {
+    "id": 2,
+    "content": "Hello guys",
+    "userId": 2,
+    "userEmail": "Abitha@gmail.com",
+    "likes": [
+      1,
+      2
+    ]
+  },
+  {
+    "id": 3,
+    "content": "Hi Folks, good to catch you",
+    "userId": 2,
+    "userEmail": "Abitha@gmail.com",
+    "likes": [
+      1
+    ]
+  }
+]

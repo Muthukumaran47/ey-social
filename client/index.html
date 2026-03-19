@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>EY Social</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #f0f2f5;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    /* HEADER */
+    .header {
+      background: #1877f2;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+      border-radius: 0 0 12px 12px;
+    }
+
+    .tagline {
+      text-align: center;
+      color: gray;
+      margin: 8px 0 15px 0;
+      font-size: 14px;
+    }
+
+    h2, h3 {
+      text-align: center;
+    }
+
+    .box {
+      background: white;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 8px 12px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      opacity: 0.8;
+    }
+
+    .primary {
+      background: #1877f2;
+      color: white;
+    }
+
+    .danger {
+      background: #e74c3c;
+      color: white;
+    }
+
+    .like {
+      background: #2ecc71;
+      color: white;
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .post {
+      display: flex;
+      gap: 10px;
+    }
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #1877f2;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+
+    .content {
+      flex: 1;
+    }
+
+    .own-post {
+      border-left: 4px solid #1877f2;
+      background: #eaf3ff;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 🔥 HEADER -->
+  <div class="header">EY Social</div>
+  <div class="tagline">Connect • Share • Engage</div>
+
+  <!-- AUTH -->
+  <div id="authSection" class="box">
+    <h2>Signup</h2>
+    <input id="signupName" placeholder="Name">
+    <input id="signupEmail" placeholder="Email">
+    <input id="signupPassword" type="password" placeholder="Password">
+    <button class="primary" onclick="signup()">Signup</button>
+
+    <hr>
+
+    <h2>Login</h2>
+    <input id="email" placeholder="Email">
+    <input id="password" type="password" placeholder="Password">
+    <button class="primary" onclick="login()">Login</button>
+  </div>
+
+  <!-- APP -->
+  <div id="appSection" style="display:none;">
+
+    <div class="box top-bar">
+      <span id="userInfo"></span>
+      <button class="danger" onclick="logout()">Logout</button>
+    </div>
+
+    <div class="box">
+      <h3>Create Post</h3>
+      <input id="content" placeholder="What's on your mind?">
+      <button class="primary" onclick="createPost()">Post</button>
+    </div>
+
+    <div class="box">
+      <h3>Feed</h3>
+      <div id="posts"></div>
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
