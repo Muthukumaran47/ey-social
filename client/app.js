@@ -1,4 +1,5 @@
-const API = "http://localhost:3000";
+const API = "https://ey-social.onrender.com";
+//const API = "http://localhost:3000";
 
 let token = sessionStorage.getItem("token") || "";
 
@@ -115,26 +116,26 @@ async function getPosts() {
 
     const div = document.createElement("div");
     div.className = "box post " + (isOwner ? "own-post" : "");
+    const name = p.userName ? p.userName : p.userEmail;
+const initial = name.charAt(0).toUpperCase();
 
-    const initial = p.userEmail.charAt(0).toUpperCase();
+div.innerHTML = `
+  <div class="avatar">${initial}</div>
+  <div class="content">
+    <strong>${name}</strong><br>
+    ${p.content}<br><br>
+    ❤️ ${p.likes.length}
+    ${alreadyLiked ? "<span style='color:green'> You liked</span>" : ""}
+    <br><br>
 
-    div.innerHTML = `
-      <div class="avatar">${initial}</div>
-      <div class="content">
-        <strong>${p.userEmail}</strong><br>
-        ${p.content}<br><br>
+    <button class="like" onclick="likePost(${p.id})" ${alreadyLiked ? "disabled" : ""}>
+      ${alreadyLiked ? "Liked" : "Like"}
+    </button>
 
-        ❤️ ${p.likes.length}
-        ${alreadyLiked ? "<span style='color:green'> You liked</span>" : ""}
-        <br><br>
+    ${isOwner ? `<button class="danger" onclick="deletePost(${p.id})">Delete</button>` : ""}
+  </div>
+`;
 
-        <button class="like" onclick="likePost(${p.id})" ${alreadyLiked ? "disabled" : ""}>
-          ${alreadyLiked ? "Liked" : "Like"}
-        </button>
-
-        ${isOwner ? `<button class="danger" onclick="deletePost(${p.id})">Delete</button>` : ""}
-      </div>
-    `;
 
     container.appendChild(div);
   });

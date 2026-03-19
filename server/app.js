@@ -92,7 +92,7 @@ app.post('/login', (req, res) => {
   }
 
   const token = jwt.sign(
-    { id: user.id, email: user.email },
+    { id: user.id, email: user.email, name: user.name },
     SECRET_KEY,
     { expiresIn: '1h' }
   );
@@ -116,6 +116,7 @@ app.post('/posts', authenticate, (req, res) => {
     content,
     userId: req.user.id,
     userEmail: req.user.email,
+    username: req.user.name,
     likes: []
   };
 
@@ -175,6 +176,13 @@ app.delete('/posts/:id', authenticate, (req, res) => {
 
   res.json({ message: "Post deleted" });
 });
+
+app.delete("/clear-posts", (req, res) => {
+  const fs = require("fs");
+  fs.writeFileSync("posts.json", JSON.stringify([]));
+  res.json({ message: "All posts deleted" });
+});
+
 
 // ---------------- START SERVER ----------------
 

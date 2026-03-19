@@ -1,31 +1,34 @@
 [
   {
     "id": 1,
-    "content": "Hello Team",
+    "content": "hi",
     "userId": 1,
     "userEmail": "muthu@gmail.com",
-    "likes": [
-      1,
-      2
-    ]
+    "username": "Muthukumaran",
+    "likes": []
   },
   {
     "id": 2,
-    "content": "Hello guys",
-    "userId": 2,
-    "userEmail": "Abitha@gmail.com",
-    "likes": [
-      1,
-      2
-    ]
+    "content": "Hello Team",
+    "userId": 1,
+    "userEmail": "muthu@gmail.com",
+    "username": "Muthukumaran",
+    "likes": []
   },
   {
     "id": 3,
-    "content": "Hi Folks, good to catch you",
-    "userId": 2,
-    "userEmail": "Abitha@gmail.com",
-    "likes": [
-      1
-    ]
+    "content": "hello",
+    "userId": 1,
+    "userEmail": "muthu@gmail.com",
+    "username": "Muthukumaran",
+    "likes": []
+  },
+  {
+    "id": 4,
+    "content": "Hello Team",
+    "userId": 1,
+    "userEmail": "muthu@gmail.com",
+    "username": "Muthukumaran",
+    "likes": []
   }
 ]
